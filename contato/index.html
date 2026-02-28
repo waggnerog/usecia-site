@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — CIA | Console Integrado de Análise</title>
+  <meta name="description" content="Entre em contato com o time do CIA para solicitar uma demonstração ou tirar dúvidas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="/usecia-site/assets/img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/usecia-site/styles.css" />
+
+  <!-- Estilos adicionais para a página de contato -->
+  <style>
+    .contact-channels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s4);
+      margin-bottom: var(--s8);
+    }
+
+    .channel-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s3);
+      padding: var(--s6);
+      border: 1px solid rgba(7,28,70,.1);
+      border-radius: 10px;
+      background: rgba(7,28,70,.02);
+    }
+
+    .channel-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(7,28,70,.06);
+      border: 1px solid rgba(7,28,70,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .channel-card-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--navy);
+      opacity: .65;
+    }
+
+    .channel-card-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--teal-light);
+    }
+
+    .channel-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .channel-card-desc {
+      font-size: 0.875rem;
+      color: var(--navy);
+      opacity: .65;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .contact-channels { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/usecia-site/" class="logo" aria-label="CIA — Console Integrado de Análise, voltar ao início">
+      <img src="/usecia-site/assets/img/logo.png" alt="" class="logo-img">
+      <span class="logo-name">CIA</span>
+    </a>
+    <nav class="site-nav" aria-label="Menu principal">
+      <ul class="nav-links" role="list">
+        <li><a href="/usecia-site/#inicio">Início</a></li>
+        <li><a href="/usecia-site/#mapa">Mapa</a></li>
+        <li><a href="/usecia-site/#radar-de-risco">Radar de Risco</a></li>
+        <li><a href="/usecia-site/#arquitetura">Arquitetura</a></li>
+        <li><a href="/usecia-site/contato/" aria-current="page">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="nav-wa wa-trigger" aria-label="Conversar pelo WhatsApp"><svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.52 14.14c-.23.65-1.35 1.24-1.85 1.31-.5.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.6-.59-2.81-1.21-4.65-4.05-4.79-4.24-.14-.19-1.1-1.47-1.1-2.8 0-1.33.69-1.98 1-2.3.23-.24.6-.35.96-.35.12 0 .22 0 .32.01.28.01.42.03.6.46.23.55.78 1.9.85 2.04.07.14.14.32.04.51-.09.2-.14.32-.27.49-.14.17-.29.38-.41.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.93 1.23 2.21 1.36.28.14.44.11.6-.07.17-.18.71-.83.9-1.11.19-.28.38-.23.64-.14.27.09 1.69.8 1.98.94.29.14.48.21.55.33.07.12.07.68-.16 1.33z"/></svg>WhatsApp</button>
+      <a href="/usecia-site/contato/" class="btn btn-primary btn-header" aria-current="page">Solicitar demonstração</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobile-menu" aria-label="Menu móvel">
+  <a href="/usecia-site/#inicio">Início</a>
+  <a href="/usecia-site/#mapa">Mapa</a>
+  <a href="/usecia-site/#radar-de-risco">Radar de Risco</a>
+  <a href="/usecia-site/#arquitetura">Arquitetura</a>
+  <a href="/usecia-site/contato/">Contato</a>
+  <div class="mobile-menu-cta">
+    <button class="btn btn-outline btn-full wa-trigger"><svg class="wa-icon" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.52 14.14c-.23.65-1.35 1.24-1.85 1.31-.5.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.6-.59-2.81-1.21-4.65-4.05-4.79-4.24-.14-.19-1.1-1.47-1.1-2.8 0-1.33.69-1.98 1-2.3.23-.24.6-.35.96-.35.12 0 .22 0 .32.01.28.01.42.03.6.46.23.55.78 1.9.85 2.04.07.14.14.32.04.51-.09.2-.14.32-.27.49-.14.17-.29.38-.41.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.93 1.23 2.21 1.36.28.14.44.11.6-.07.17-.18.71-.83.9-1.11.19-.28.38-.23.64-.14.27.09 1.69.8 1.98.94.29.14.48.21.55.33.07.12.07.68-.16 1.33z"/></svg>WhatsApp</button>
+    <a href="/usecia-site/contato/" class="btn btn-primary btn-full">Solicitar demonstração</a>
+  </div>
+</nav>
+
+<!-- CONTEÚDO -->
+<main id="conteudo-principal">
+  <div class="contact-wrap">
+    <div class="container">
+
+      <div class="contact-hd">
+        <span class="section-eyebrow">Contato</span>
+        <h1 style="font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;letter-spacing:-.025em;margin-top:var(--s3);">Fale com o time CIA.</h1>
+        <p style="font-size:1.0625rem;opacity:.72;max-width:52ch;margin-top:var(--s4);">
+          Escolha o canal de sua preferência. Respondemos em até 1 dia útil pelo formulário e imediatamente pelo WhatsApp.
+        </p>
+      </div>
+
+      <!-- Canais rápidos -->
+      <div class="contact-channels" style="margin-top:var(--s8);">
+        <div class="channel-card">
+          <div class="channel-card-icon" aria-hidden="true">
+            <!-- Ícone WhatsApp simplificado -->
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+            </svg>
+          </div>
+          <span class="channel-card-label">Resposta imediata</span>
+          <p class="channel-card-title">WhatsApp</p>
+          <p class="channel-card-desc">Converse diretamente com o time. Mensagem pronta para agilizar o primeiro contato.</p>
+          <button class="btn btn-wa wa-trigger" style="margin-top:var(--s2);align-self:flex-start;"><svg class="wa-icon" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.52 14.14c-.23.65-1.35 1.24-1.85 1.31-.5.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.6-.59-2.81-1.21-4.65-4.05-4.79-4.24-.14-.19-1.1-1.47-1.1-2.8 0-1.33.69-1.98 1-2.3.23-.24.6-.35.96-.35.12 0 .22 0 .32.01.28.01.42.03.6.46.23.55.78 1.9.85 2.04.07.14.14.32.04.51-.09.2-.14.32-.27.49-.14.17-.29.38-.41.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.93 1.23 2.21 1.36.28.14.44.11.6-.07.17-.18.71-.83.9-1.11.19-.28.38-.23.64-.14.27.09 1.69.8 1.98.94.29.14.48.21.55.33.07.12.07.68-.16 1.33z"/></svg>Abrir WhatsApp
+          </button>
+        </div>
+
+        <div class="channel-card">
+          <div class="channel-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <span class="channel-card-label">Até 1 dia útil</span>
+          <p class="channel-card-title">E-mail</p>
+          <p class="channel-card-desc">Envie sua mensagem diretamente para nossa equipe comercial.</p>
+          <!-- ← Altere o e-mail aqui -->
+          <a href="mailto:contato@cia.com.br" class="btn btn-outline" style="margin-top:var(--s2);align-self:flex-start;">
+            contato@cia.com.br
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid: info + formulário -->
+      <div class="contact-grid" style="margin-top:var(--s16);padding-top:var(--s12);border-top:1px solid rgba(7,28,70,.07);">
+
+        <!-- Informações -->
+        <div class="contact-info">
+          <h2 style="font-size:clamp(1.25rem,2.5vw,1.75rem);font-weight:700;letter-spacing:-.02em;">
+            Solicitar demonstração
+          </h2>
+          <p style="font-size:.9375rem;opacity:.72;max-width:42ch;line-height:1.7;">
+            Preencha o formulário e um especialista do CIA entrará em contato para apresentar a plataforma e alinhar os próximos passos.
+          </p>
+
+          <div class="contact-info-block">
+            <span class="contact-info-label">Tempo de resposta</span>
+            <p class="contact-info-value">Até 1 dia útil pelo formulário.</p>
+          </div>
+
+          <div class="contact-info-block">
+            <span class="contact-info-label">Horário de atendimento</span>
+            <p class="contact-info-value">Segunda a sexta, 9h–18h (horário de Brasília).</p>
+          </div>
+
+          <div class="contact-info-block">
+            <span class="contact-info-label">Prefere falar agora?</span>
+            <p class="contact-info-value" style="margin-bottom:var(--s3);">Use o WhatsApp — resposta imediata.</p>
+            <button class="btn btn-wa wa-trigger"><svg class="wa-icon" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.52 14.14c-.23.65-1.35 1.24-1.85 1.31-.5.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.6-.59-2.81-1.21-4.65-4.05-4.79-4.24-.14-.19-1.1-1.47-1.1-2.8 0-1.33.69-1.98 1-2.3.23-.24.6-.35.96-.35.12 0 .22 0 .32.01.28.01.42.03.6.46.23.55.78 1.9.85 2.04.07.14.14.32.04.51-.09.2-.14.32-.27.49-.14.17-.29.38-.41.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.93 1.23 2.21 1.36.28.14.44.11.6-.07.17-.18.71-.83.9-1.11.19-.28.38-.23.64-.14.27.09 1.69.8 1.98.94.29.14.48.21.55.33.07.12.07.68-.16 1.33z"/></svg>Abrir WhatsApp</button>
+          </div>
+        </div>
+
+        <!-- Formulário de Lead -->
+        <div class="form-card" role="region" aria-labelledby="form-contato-title">
+          <p class="form-card-title" id="form-contato-title">Enviar solicitação</p>
+          <p class="form-card-sub">Todos os campos são obrigatórios.</p>
+
+          <form id="form-lead-contato" novalidate>
+            <div class="form-fields">
+
+              <div class="form-group">
+                <label class="form-label" for="ct-nome">Nome completo</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="ct-nome"
+                  name="nome"
+                  placeholder="Seu nome"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ct-email">E-mail corporativo</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="ct-email"
+                  name="email"
+                  placeholder="voce@empresa.com.br"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ct-empresa">Empresa</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="ct-empresa"
+                  name="empresa"
+                  placeholder="Nome da empresa"
+                  required
+                  autocomplete="organization"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ct-mensagem">Mensagem (opcional)</label>
+                <textarea
+                  class="form-input"
+                  id="ct-mensagem"
+                  name="mensagem"
+                  placeholder="Descreva brevemente seu contexto ou dúvida..."
+                  rows="3"
+                  style="resize:vertical;min-height:80px;"
+                ></textarea>
+              </div>
+
+              <div class="form-check-row">
+                <input
+                  class="form-checkbox"
+                  type="checkbox"
+                  id="ct-termos"
+                  name="termos"
+                  required
+                />
+                <label class="form-check-label" for="ct-termos">
+                  Li e concordo com os
+                  <a href="/usecia-site/termos-de-uso/">Termos de Uso</a>
+                  e a
+                  <a href="/usecia-site/politica-de-privacidade/">Política de Privacidade</a>.
+                </label>
+              </div>
+
+              <p class="form-error" role="alert">
+                Preencha todos os campos obrigatórios e aceite os termos.
+              </p>
+
+              <button type="submit" class="btn btn-primary btn-full" style="margin-top:var(--s2);">
+                Enviar solicitação
+              </button>
+
+            </div>
+
+            <!-- Estado de sucesso -->
+            <div class="form-success" role="status" aria-live="polite">
+              <p class="form-success-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4AA6B1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                Recebido!
+              </p>
+              <p class="form-success-sub">
+                Obrigado pelo contato. Retornaremos em até 1 dia útil.<br/>
+                Se quiser agilizar, fale agora pelo WhatsApp:
+              </p>
+              <button type="button" class="btn btn-wa btn-full wa-trigger" style="margin-top:var(--s2);"><svg class="wa-icon" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.52 14.14c-.23.65-1.35 1.24-1.85 1.31-.5.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.6-.59-2.81-1.21-4.65-4.05-4.79-4.24-.14-.19-1.1-1.47-1.1-2.8 0-1.33.69-1.98 1-2.3.23-.24.6-.35.96-.35.12 0 .22 0 .32.01.28.01.42.03.6.46.23.55.78 1.9.85 2.04.07.14.14.32.04.51-.09.2-.14.32-.27.49-.14.17-.29.38-.41.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.93 1.23 2.21 1.36.28.14.44.11.6-.07.17-.18.71-.83.9-1.11.19-.28.38-.23.64-.14.27.09 1.69.8 1.98.94.29.14.48.21.55.33.07.12.07.68-.16 1.33z"/></svg>Abrir WhatsApp
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/usecia-site/" class="footer-logo">CIA</a>
+        <p class="footer-tagline">Console Integrado de Análise — Infraestrutura para governança e execução da operação.</p>
+      </div>
+      <div>
+        <span class="footer-col-title">Sobre</span>
+        <ul class="footer-links">
+          <li><a href="/usecia-site/#inicio">Início</a></li>
+          <li><a href="/usecia-site/#mapa">Mapa</a></li>
+          <li><a href="/usecia-site/#arquitetura">Arquitetura</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Legal</span>
+        <ul class="footer-links">
+          <li><a href="/usecia-site/termos-de-uso/">Termos de Uso</a></li>
+          <li><a href="/usecia-site/politica-de-privacidade/">Privacidade</a></li>
+          <li><a href="/usecia-site/cookies/">Cookies</a></li>
+          <li><a href="/usecia-site/seguranca/">Segurança</a></li>
+          <li><a href="/usecia-site/acessibilidade/">Acessibilidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-title">Contato</span>
+        <ul class="footer-links">
+          <li><a href="/usecia-site/contato/">Fale conosco</a></li>
+          <li><button class="btn btn-ghost wa-trigger" style="font-size:.875rem;padding:0;height:auto;border:none;display:inline-flex;align-items:center;gap:5px;"><svg viewBox="0 0 24 24" fill="#25D366" width="14" height="14" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.52 14.14c-.23.65-1.35 1.24-1.85 1.31-.5.07-1.1.1-1.77-.11-.41-.13-.93-.3-1.6-.59-2.81-1.21-4.65-4.05-4.79-4.24-.14-.19-1.1-1.47-1.1-2.8 0-1.33.69-1.98 1-2.3.23-.24.6-.35.96-.35.12 0 .22 0 .32.01.28.01.42.03.6.46.23.55.78 1.9.85 2.04.07.14.14.32.04.51-.09.2-.14.32-.27.49-.14.17-.29.38-.41.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.93 1.23 2.21 1.36.28.14.44.11.6-.07.17-.18.71-.83.9-1.11.19-.28.38-.23.64-.14.27.09 1.69.8 1.98.94.29.14.48.21.55.33.07.12.07.68-.16 1.33z"/></svg>WhatsApp</button></li>
+          <li><a href="mailto:contato@cia.com.br">contato@cia.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 CIA — Console Integrado de Análise. Todos os direitos reservados.</span>
+      <nav class="footer-legal" aria-label="Links legais">
+        <a href="/usecia-site/termos-de-uso/">Termos</a>
+        <a href="/usecia-site/politica-de-privacidade/">Privacidade</a>
+        <a href="/usecia-site/cookies/">Cookies</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script src="/usecia-site/main.js"></script>
+</body>
+</html>
